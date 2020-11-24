@@ -13,6 +13,7 @@ namespace UniversityWebApplication
     {
         public static void Main(string[] args)
         {
+            // small change.
             CreateHostBuilder(args).Build().Run();
         }
 
