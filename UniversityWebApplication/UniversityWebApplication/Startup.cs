@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using UniversityWebApplication.Models.University;
+using UniversityWebApplication.Providers.University;
 
 namespace UniversityWebApplication
 {
@@ -24,6 +26,9 @@ namespace UniversityWebApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddSingleton<IDataProvider<Student>, InMemoryStudentProvider>();
+            services.AddSingleton<IDataProvider<Course>, InMemoryCourseProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,7 +55,7 @@ namespace UniversityWebApplication
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=students}/{action=Index}/{id?}");
+                    pattern: "{controller=student}/{action=Index}/{id?}");
             });
         }
     }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using UniversityWebApplication.Models;
@@ -21,6 +17,11 @@ namespace UniversityWebApplication.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        public string Test()
+        {
+            return "Hello MVC!";
         }
 
         public IActionResult Privacy()
