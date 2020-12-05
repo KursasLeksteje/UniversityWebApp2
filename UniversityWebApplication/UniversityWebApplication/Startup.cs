@@ -50,7 +50,7 @@ namespace UniversityWebApplication
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=students}/{action=Index}/{id?}");
             });
         }
     }
